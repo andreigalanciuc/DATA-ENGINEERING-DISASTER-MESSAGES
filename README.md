@@ -18,12 +18,16 @@ The machine learning pipeline is concerned with training the model and testing i
 The `run.py` `process_data` and `train_classifier` are basically the ETL pipeline and ML pipeline included in the terminal workspace to make the app work. `run.py` relates to the interface of the app.
 
 ## RUN THE APP
-- To run ETL pipeline that cleans data and stores in database
-        `python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db`
-- To run ML pipeline that trains classifier and saves
-        `python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl`
-Run the following command in the app's directory to run your web app.
-    `python app/run.py` 
-    
+### 1) Run process_data.py
+Save the data folder in the current working directory and process_data.py in the data folder.
+From the current working directory, run the following command: python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db
+
+### 2) Run train_classifier.py
+In the current working directory, create a folder called 'models' and save train_classifier.py in this.
+From the current working directory, run the following command: python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl
+
+### 3) Run the web app
+Save the app folder in the current working directory.
+Run the following command in the app directory: python app/run.py
 Go to http://0.0.0.0:3001/
     
