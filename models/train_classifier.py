@@ -53,11 +53,13 @@ def build_model():
     return cv
 
 # Test the model and print the classification report for the 36 categories.
-def evaluate_model(model, X_test, Y_test, category_names):
+def performance(model, X_test, y_test):
     y_pred = model.predict(X_test)
-    print(classification_report(y_pred, Y_test.values, target_names=category_names))
-    # print raw accuracy score 
-    print('Accuracy Score: {}'.format(np.mean(Y_test.values == y_pred)))
+    for i, col in enumerate(y_test):
+        print(col)
+        print(classification_report(y_test[col], y_pred[:, i]))
+        # print raw accuracy score 
+        print('Accuracy Score: {}'.format(np.mean(Y_test.values == y_pred)))
     
 
 # save the model as a pickle file
