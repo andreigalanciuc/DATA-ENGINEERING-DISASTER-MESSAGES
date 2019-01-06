@@ -19,15 +19,15 @@ The `run.py` `process_data` and `train_classifier` are basically the ETL pipelin
 
 ## RUN THE APP
 ### 1) Run process_data.py
-Save the data folder in the current working directory and process_data.py in the data folder.
+Make a `data` folder and save the `disaster_messages.csv`, `disaster_categories.csv` and `process_data.py` there.
 From the current working directory, run the following command: python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db
 
 ### 2) Run train_classifier.py
-In the current working directory, create a folder called 'models' and save train_classifier.py in this.
+In the current working directory, create a folder called `models` and save `train_classifier.py` in this.
 From the current working directory, run the following command: python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl
 
 ### 3) Run the web app
-Save the app folder in the current working directory.
+Make an `app` folder and save the `master.html` and `go.html` and `run.py` there.
 Run the following command in the app directory: python app/run.py
 Go to http://0.0.0.0:3001/
     
