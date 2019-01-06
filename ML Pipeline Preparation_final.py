@@ -116,7 +116,7 @@ def performance(model, X_test, y_test):
         print(col)
         print(classification_report(y_test[col], y_pred[:, i]))
         # print raw accuracy score 
-        print('Accuracy Score: {}'.format(np.mean(Y_test.values == y_pred)))
+        print('Accuracy Score: {}'.format(np.mean(y_test.values == y_pred)))
 
 
 # In[12]:
