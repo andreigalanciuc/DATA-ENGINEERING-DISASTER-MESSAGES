@@ -40,7 +40,7 @@ def tokenize(text):
 # build the model
 def build_model():
     pipeline = Pipeline([
-    ('vect', CountVectorizer()),
+    ('vect', CountVectorizer(tokenizer = tokenize)),
     ('tfidf', TfidfTransformer()),
     ('clf', MultiOutputClassifier(RandomForestClassifier()))])
     
