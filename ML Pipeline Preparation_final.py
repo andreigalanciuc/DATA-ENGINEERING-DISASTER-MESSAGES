@@ -79,7 +79,7 @@ def tokenize(text):
 
 
 pipeline = Pipeline([
-    ('vect', CountVectorizer()),
+    ('vect', CountVectorizer(tokenizer = tokenize)),
     ('tfidf', TfidfTransformer()),
     ('clf', MultiOutputClassifier(RandomForestClassifier()))
 ])
@@ -169,7 +169,7 @@ performance(cv, X_test, y_test)
 
 # Improve the pipeline.
 pipeline2 = Pipeline([
-    ('vect', CountVectorizer()),
+    ('vect', CountVectorizer(tokenizer = tokenize)),
     ('best', TruncatedSVD()),
     ('tfidf', TfidfTransformer()),
     ('clf', MultiOutputClassifier(AdaBoostClassifier()))
@@ -285,7 +285,7 @@ def tokenize(text):
 # Build the model.
 def build_model():
     pipeline = Pipeline([
-    ('vect', CountVectorizer()),
+    ('vect', CountVectorizer(tokenizer = tokenize)),
     ('tfidf', TfidfTransformer()),
     ('clf', MultiOutputClassifier(RandomForestClassifier()))])
     
